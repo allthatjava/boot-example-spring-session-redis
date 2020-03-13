@@ -1,0 +1,13 @@
+server:
+  servlet:
+    session:
+      timeout: 1800
+spring:
+  session:
+    store-type: redis
+    redis:
+      flush-mode: on_save
+      namespace: spring:session
+  redis:
+    host: 192.168.99.100
+    port: 6379

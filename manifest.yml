@@ -1,0 +1,8 @@
+---
+applications:
+  - name: boot-example-spring-session-redis
+    path: build/libs/boot-example-spring-session-redis-0.0.1-SNAPSHOT.jar
+    env:
+      SPRING_PROFILES_ACTIVE: development
+    services:
+      - redis

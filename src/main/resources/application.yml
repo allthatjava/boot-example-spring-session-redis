@@ -1,8 +1,6 @@
-server:
-  servlet:
-    session:
-      timeout: 1800
+# Local Config
 spring:
+  profiles: default
   session:
     store-type: redis
     redis:
@@ -11,3 +9,20 @@ spring:
   redis:
     host: 192.168.99.100
     port: 6379
+server:
+  servlet:
+    session:
+      timeout: 1800
+---
+# Cloud Config
+spring:
+  profiles: development
+  session:
+    store-type: redis
+    redis:
+      flush-mode: on_save
+      namespace: spring:session
+server:
+  servlet:
+    session:
+      timeout: 1800
